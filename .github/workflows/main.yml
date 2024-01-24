@@ -20,4 +20,6 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }} # User of the server you want to ssh into
         script: |
           cd /var/www/html
-          git pull origin master
+          git reset --hard
+          git fetch -all
+          git pull --all
