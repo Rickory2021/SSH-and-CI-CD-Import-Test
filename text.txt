@@ -2,3 +2,4 @@ Testing Fetch all
 After Deleting Local Unique Files
 Added git config --get remote.origin.fetch
 Moved to Master Branch
+Have to Commit Again to Update
