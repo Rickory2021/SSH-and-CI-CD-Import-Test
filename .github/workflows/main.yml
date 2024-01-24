@@ -1,0 +1,19 @@
+name: Constant Integration and Constant Deployment
+on:
+  
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Executing Remote SSH Commands Using Password
+      uses: appleboy/ssh-action@v0.1.2 #Marketplace Tool
+      with:
+        host: ${{secrets.SSH_HOST}} # IP address
+        key: ${{secrets.SSH_KEY}} # Private key
+        username: ${{ secrets.SSH_USERNAME }} # User of the server you want to ssh into
+        script: |
+          cd /var/www/html
+          git reset --hard
+          git fetch -p
+          git pull --all
